@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-// ProductCard.js
+
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, increaseProductAmount, decreaseProductAmount, removeFromCart } from '../redux/actions';

@@ -17,7 +17,7 @@ function ShoppingCart({ isOpen, toggleCart }) {
 
   const handleBuyNow = () => {
     dispatch(resetCart());
-    toggleCart(); // Sepeti kapat
+    toggleCart(); 
   };
 
   const handleIncreaseAmount = (product) => {
@@ -39,7 +39,7 @@ function ShoppingCart({ isOpen, toggleCart }) {
           {cartProducts.map((product) => (
             <li key={product.id}>
               <div className="product-info">
-                <img src={product.thumbnail} alt={product.title} /> {/* Resim eklendi */}
+                <img src={product.thumbnail} alt={product.title} /> {}
                 <span className='quantity'>
                   {product.title} - {product.amount} adet
                 </span>

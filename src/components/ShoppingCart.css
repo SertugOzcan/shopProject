@@ -1,23 +1,23 @@
-/* ShoppingCart.css */
+
 .shopping-cart-container {
   position: absolute;
-  top: -300px; /* Kapalıyken ekrandan yukarıda olacak */
+  top: -300px; 
   right: 10px;
-  width: 400px; /* Genişlik artırıldı */
+  width: 400px; 
   background-color: rgb(237, 237, 237);
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out; /* top için geçiş efekti eklendi */
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out; 
   transform: translateY(-100%);
-  z-index: 1000; /* Diğer içeriğin önünde olması için yüksek bir z-index değeri */
-  overflow-y: auto; /* Eğer içerik taşarsa kaydırma çubuğu eklendi */
-  max-height: 400px; /* Maksimum yükseklik eklendi */
+  z-index: 1000; 
+  overflow-y: auto; 
+  max-height: 400px; 
 }
 
 .shopping-cart-container.open {
   transform: translateY(0%);
-  top: 60px; /* Açıkken navbarın altında gözükecek */
+  top: 60px; 
 }
 
 .shopping-cart-content {
@@ -67,29 +67,29 @@
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Ürünleri dikey olarak düzenle */
+  flex-direction: column; 
 }
 
 .shopping-cart-content ul li {
   border-bottom: 1px solid #ccc;
-  padding: 10px; /* Ürünlerin etrafına boşluk ekle */
+  padding: 10px; 
   display: flex;
-  align-items: center; /* Ürünleri dikey olarak hizala */
+  align-items: center; 
 }
 
 .shopping-cart-content ul li img {
   max-width: 50px;
   max-height: 50px;
   margin-right: 10px;
-  border-radius: 5px; /* Resimlere kenar yuvarlaklığı ekle */
+  border-radius: 5px;
 }
 
 .shopping-cart-content ul li .product-info {
-  flex: 1; /* Ürün bilgilerinin esnek genişliğini ayarla */
+  flex: 1; 
 }
 
 .shopping-cart-content ul li .product-info span {
-  margin-bottom: 5px; /* Ürün bilgileri arasına boşluk ekle */
+  margin-bottom: 5px; 
 }
 
 .shopping-cart-content ul li .quantity {

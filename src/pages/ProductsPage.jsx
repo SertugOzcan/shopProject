@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-// ProductsPage.js
+
 import React from 'react';
-import ProductCard from '../components/ProductCard'; // veya doğru yolu belirtin
-import data from '../data/product-data'; // data.json dosyasını içe aktarın
+import ProductCard from '../components/ProductCard'; 
+import data from '../data/product-data'; 
 
 function ProductsPage() {
-  const products = data.products; // data.json'dan ürünleri alın
+  const products = data.products; 
 
   return (
     <div>

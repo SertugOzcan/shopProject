@@ -3,7 +3,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { cartReducer } from './reducers';
 
-// Varsayılan state'inizi tanımlayın
+
 const defaultState = {
     cartProducts: []
 };
