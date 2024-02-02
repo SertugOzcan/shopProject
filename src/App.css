@@ -38,7 +38,7 @@
   font-size: 32px;
   color: #aaa;
   cursor: pointer;
-  z-index: 9999; 
+  z-index: 999; /* shopping-cart-icon'ın z-index değeri */
   transition: color 0.3s;
 }
 
@@ -120,4 +120,21 @@
 
 .product-card .button-container .addtocartbtn:hover {
   background-color: #12b303;
+}
+
+
+.cart-counter {
+  position: absolute;
+  top: 9px; 
+  right: 12px; 
+  background-color: red;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  z-index: 1000; 
 }
