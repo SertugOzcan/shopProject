@@ -3,19 +3,21 @@
   position: absolute;
   top: -300px; /* Kapalıyken ekrandan yukarıda olacak */
   right: 10px;
-  width: 300px;
-  background-color: white;
+  width: 400px; /* Genişlik artırıldı */
+  background-color: rgb(237, 237, 237);
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, top 0.3s ease-in-out; /* top için geçiş efekti eklendi */
   transform: translateY(-100%);
   z-index: 1000; /* Diğer içeriğin önünde olması için yüksek bir z-index değeri */
+  overflow-y: auto; /* Eğer içerik taşarsa kaydırma çubuğu eklendi */
+  max-height: 400px; /* Maksimum yükseklik eklendi */
 }
 
 .shopping-cart-container.open {
   transform: translateY(0%);
-  top: 50px; /* Açıkken navbarın altında gözükecek */
+  top: 60px; /* Açıkken navbarın altında gözükecek */
 }
 
 .shopping-cart-content {
@@ -31,4 +33,70 @@
 
 .close:hover {
   color: red;
+}
+
+.shopping-cart-content .removebtn {
+  background-color: #b10101;
+  border-radius: 10%;
+  border: 1px solid #878787;
+  font-size: 13px;
+  color: white;
+  margin-left: 10px;
+}
+.shopping-cart-content .satınbtn
+{
+  background-color: #018001;
+  border-radius: 10%;
+  border: 2px solid #00610f;
+  font-size: 18px;
+  color: white;
+  margin-left: 10px;
+}
+
+.shopping-cart-content .removebtn:hover{
+  background-color: #f30000;
+}
+
+
+.shopping-cart-content .satınbtn:hover {
+  background-color: #12b303;
+}
+
+/* Ürün resimleri için stiller */
+.shopping-cart-content ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Ürünleri dikey olarak düzenle */
+}
+
+.shopping-cart-content ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px; /* Ürünlerin etrafına boşluk ekle */
+  display: flex;
+  align-items: center; /* Ürünleri dikey olarak hizala */
+}
+
+.shopping-cart-content ul li img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+  border-radius: 5px; /* Resimlere kenar yuvarlaklığı ekle */
+}
+
+.shopping-cart-content ul li .product-info {
+  flex: 1; /* Ürün bilgilerinin esnek genişliğini ayarla */
+}
+
+.shopping-cart-content ul li .product-info span {
+  margin-bottom: 5px; /* Ürün bilgileri arasına boşluk ekle */
+}
+
+.shopping-cart-content ul li .quantity {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #fbf8d6;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 1px solid #484848;
 }

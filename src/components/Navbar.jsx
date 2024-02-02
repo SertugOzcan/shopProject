@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <ul>
-        <li><Link to="/">Anasayfa</Link></li>
+        <li className='anasayfa'><Link to="/">Anasayfa</Link></li>
         <li><Link to="/products">Ürünler</Link></li>
       </ul>
       

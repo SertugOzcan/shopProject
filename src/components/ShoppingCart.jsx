@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, resetCart } from '../redux/actions';
+import { removeFromCart, resetCart, increaseProductAmount, decreaseProductAmount } from '../redux/actions';
 import './ShoppingCart.css';
 
 function ShoppingCart({ isOpen, toggleCart }) {
@@ -20,6 +20,14 @@ function ShoppingCart({ isOpen, toggleCart }) {
     toggleCart(); // Sepeti kapat
   };
 
+  const handleIncreaseAmount = (product) => {
+    dispatch(increaseProductAmount(product));
+  };
+
+  const handleDecreaseAmount = (product) => {
+    dispatch(decreaseProductAmount(product));
+  };
+
   return (
     <div className={`shopping-cart-container ${isOpen ? 'open' : ''}`}>
       <div className="shopping-cart-content">
@@ -30,13 +38,20 @@ function ShoppingCart({ isOpen, toggleCart }) {
         <ul>
           {cartProducts.map((product) => (
             <li key={product.id}>
-              <span>
-                {product.title} - {product.amount} adet
-              </span>
-              <span>${product.price * product.amount}</span>
-              <button onClick={() => handleRemoveFromCart(product)}>
-                Remove
-              </button>
+              <div className="product-info">
+                <img src={product.thumbnail} alt={product.title} /> {/* Resim eklendi */}
+                <span className='quantity'>
+                  {product.title} - {product.amount} adet
+                </span>
+                <span>${product.price * product.amount}</span>
+              </div>
+              <div>
+                <button className='removebtn' onClick={() => handleRemoveFromCart(product)}>
+                  Remove
+                </button>
+                <button className='plus' onClick={() => handleIncreaseAmount(product)}>+</button>
+                <button className="minus" onClick={() => product.amount === 1 ? handleRemoveFromCart(product) : handleDecreaseAmount(product)}>-</button>
+              </div>
             </li>
           ))}
         </ul>
@@ -47,11 +62,10 @@ function ShoppingCart({ isOpen, toggleCart }) {
             0
           )}
         </h3>
-        <button onClick={() => handleBuyNow()}>Satın Al</button>
+        <button className='satınbtn' onClick={() => handleBuyNow()}>Satın Al</button>
       </div>
     </div>
   );
 }
 
 export default ShoppingCart;
-

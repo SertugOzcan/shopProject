@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 
 import React from "react";
-import ImageSlider from "../components/ImageSlider"; // veya doğru yolu belirtin
-import ProductCard from "../components/ProductCard"; // veya doğru yolu belirtin
-import data from "../data/product-data"; // data.json dosyasını içe aktarın
+import ImageSlider from "../components/ImageSlider"; 
+import ProductCard from "../components/ProductCard"; 
+import data from "../data/product-data"; 
+
 
 function HomePage() {
   const products = data.products;
