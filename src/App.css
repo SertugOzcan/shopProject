@@ -1,3 +1,4 @@
+/* Navbar */
 .navbar {
   background-color: #333;
   padding: 10px 0;
@@ -30,8 +31,8 @@
   color: #999;
 }
 
-.shopping-icon {
-  position: fixed;
+.shopping-cart-icon {
+  position: absolute;
   top: 20px;
   right: 20px;
   font-size: 32px;
@@ -41,61 +42,82 @@
   transition: color 0.3s;
 }
 
-
-.shopping-icon:hover {
+.shopping-cart-icon:hover {
   color: #555;
 }
 
-
-
 /* Ürün Kartları */
-/* Ürün Kartları */
-.product-container {
+.product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .product-card {
-  width: calc(20% - 40px); /* Her satırda 5 kart olacak şekilde genişlik ayarla */
-  margin: 20px;
-  background-color: #f9f9f9;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #d0d0d099;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .product-card img {
   width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 60%;
   border-radius: 8px;
 }
 
-.product-card h3 {
-  font-size: 24px;
-  margin-top: 10px;
+.product-card .button-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
 }
 
-.product-card p {
-  font-size: 18px;
-  color: #666;
-  margin-top: 10px;
-}
-
-.product-card button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+.product-card .button-container button {
+  font-size: 20px;
+  width: 40px; /* Değiştirildi */
+  height: 40px; /* Değiştirildi */
+  line-height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #c51414;
+  color: rgb(24, 4, 4); /* Buton metninin rengi beyaz olsun */
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+  margin: 0 5px;
   transition: background-color 0.3s;
 }
 
-.product-card button:hover {
-  background-color: #555;
+.product-card .button-container button:hover {
+  background-color: #ff0808;
 }
 
 
+.product-card .amount {
+  font-size: 20px;
+  color: black; /* Amount metninin rengi siyah olsun */
+}
+
+.product-card .button-container .addtocartbtn {
+  font-size: 20px;
+  width: 150px; /* İstenilen genişliğe göre ayarlayabilirsiniz */
+  height: 40px; /* İstenilen yüksekliğe göre ayarlayabilirsiniz */
+  border-radius: 5px; /* İstenilen köşe yuvarlaklığına göre ayarlayabilirsiniz */
+  border: none;
+  background-color: #c51414;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card .button-container .addtocartbtn:hover {
+  background-color: #ff0000;
+}

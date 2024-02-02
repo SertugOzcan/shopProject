@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCart from './ShoppingCart';
 
 function Navbar() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen); // Modal durumunu tersine çevir
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
   };
 
   return (
@@ -18,13 +20,11 @@ function Navbar() {
         <li><Link to="/products">Ürünler</Link></li>
       </ul>
       
-      {/* Sepet ikonunu buraya ekle */}
-      <div className="shopping-icon" onClick={toggleModal}>
-        <FaShoppingCart />
+      <div className="shopping-cart-icon" onClick={toggleCart}>
+        <FontAwesomeIcon icon={faShoppingCart} />
       </div>
 
-      {/* Sepet modal'ını buraya ekle */}
-      {isModalOpen && <ShoppingCart />}
+      <ShoppingCart isOpen={isCartOpen} toggleCart={toggleCart} />
     </nav>
   );
 }

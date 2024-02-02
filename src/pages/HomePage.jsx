@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 
-
-import React from 'react';
-import ImageSlider from '../components/ImageSlider'; // veya doğru yolu belirtin
+import React from "react";
+import ImageSlider from "../components/ImageSlider"; // veya doğru yolu belirtin
+import ProductCard from "../components/ProductCard"; // veya doğru yolu belirtin
+import data from "../data/product-data"; // data.json dosyasını içe aktarın
 
 function HomePage() {
+  const products = data.products;
+
   const slides = [
     {
       url: "./images/image-1.jpeg",
@@ -34,10 +37,23 @@ function HomePage() {
   ];
 
   return (
-    <div>
-      <h2>Anasayfa</h2>
-      <ImageSlider slides={slides} />
-    </div>
+    <>
+      <div>
+        <h2>Anasayfa</h2>
+        <ImageSlider slides={slides} />
+      </div>
+
+      <div>
+        <h2>Popüler ürünler</h2>
+        <div className="product-list">
+          {products
+            .filter((product) => product.rating >= 4.5)
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+        </div>
+      </div>
+    </>
   );
 }
 

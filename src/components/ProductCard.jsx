@@ -3,7 +3,7 @@
 // ProductCard.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, increaseProductAmount, decreaseProductAmount } from '../redux/actions';
+import { addToCart, increaseProductAmount, decreaseProductAmount, removeFromCart } from '../redux/actions';
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
@@ -24,19 +24,23 @@ function ProductCard({ product }) {
     dispatch(decreaseProductAmount(product));
   };
 
+  const handleRemoveFromCart = () => {
+    dispatch(removeFromCart(product));
+  };
+
   return (
     <div className="product-card">
       <img src={product.thumbnail} alt={product.title} />
       <h3>{product.title}</h3>
       <p>Fiyat: ${product.price}</p>
-      <div>
+      <div className="button-container">
         {amount === 0 ? (
-          <button onClick={handleAddToCart}>Add to Cart</button>
+          <button className= "addtocartbtn" onClick={handleAddToCart}>Add to Cart</button>
         ) : (
           <>
-            <button onClick={handleDecreaseAmount}>-</button>
-            <span>{amount}</span>
-            <button onClick={handleIncreaseAmount}>+</button>
+            <button className="minus" onClick={amount === 1 ? handleRemoveFromCart : handleDecreaseAmount}>-</button>
+            <span className="amount">{amount}</span>
+            <button className="plus" onClick={handleIncreaseAmount}>+</button>
           </>
         )}
       </div>
@@ -45,5 +49,6 @@ function ProductCard({ product }) {
 }
 
 export default ProductCard;
+
 
 

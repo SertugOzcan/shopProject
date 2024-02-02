@@ -12,14 +12,12 @@
 .slide-container {
   width: 80%;
   height: 100%;
-  /* No need for float:right */
 }
   
 .slide-info {
   width: 20%;
   height: 100%;
   padding: 20px;
-  /* No need for float:left */
   font-family: Arial, sans-serif;
   font-size: 18px;
   color: #333;

@@ -24,8 +24,8 @@ export const cartReducer = (state, action) => {
         case 'REMOVE_FROM_CART':
             return {...state, cartProducts: state.cartProducts.filter((product) => product.id !== action.payload.id)}
 
-        case 'RESET_CART':  // YAPILMADI
-            return state;
+            case 'RESET_CART':
+                return {...state, cartProducts: []};
         default:
             return state;
     }
